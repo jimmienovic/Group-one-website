@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<h1><font size="35">LIRA SECONDARY SCHOOL</font></h1>
+ <img src="admin.JPG" alt="School ADMINSTRATION BLOCK" width="500">
+<p align="center"><strong> <marquee>Lira Secondary School is a center of academic excellence, nurturing students with holistic education and strong moral values.</marquee></strong></p>
+    <meta charset="UTF-8">
+    <title>Lira Secondary School - FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #004080;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background-color: #0066cc;
+        }
+
+        /* Page Container */
+        .container {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #004080;
+        }
+
+        /* FAQ Style */
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            background-color: #eee;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border: 1px solid #ccc;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #004080;
+        }
+
+        .active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="Contacts.html">Contact</a>
+        <a href="Staff.html">Staff</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="FAQ.html">FAQ</a>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">1. What is the admission process?</div>
+            <div class="faq-answer">Admission forms are available at the school office. You will need to fill the form and attach the required documents for review.</div>
+        </div>
+	<div class="faq-item">
+            <div class="faq-question">2. What are the admission requirements?</div>
+            <div class="faq-answer">Those joining S1 and S4 the admission requirement is PLE and UCE slip respectively, Transfer cases in S2, S3, S4 and S6, Report card of the previous school and 
+	    recommendation from the previous school.</div>
+        </div>
+
+
+        <div class="faq-item">
+            <div class="faq-question">3. What curriculum does Lira Secondary School follow?</div>
+            <div class="faq-answer">We follow the curriculum designed by NCDC and Which is examine by Uganda National Examinations Board (UNEB) both O-Level and A-Level.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">4. Does the school provide boarding facilities?</div>
+            <div class="faq-answer">Yes, we offer only boarding options for our students from S1-S6.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">5. How can I contact the school administration?</div>
+            <div class="faq-answer">You can reach us via the contact page or call our office during working hours.</div>
+        </div>
+ 	<div class="faq-item">
+            <div class="faq-question">6. What sports and clubs are available?</div>
+            <div class="faq-answer"><H4>Sports:</h4>Football, Netball, Basketball, Valleyball, Tennisball, Cricket, Hackey, Handball, Swimming.<br>
+           <H4>Clubs:</h4>Academic Club, Debating Club, ICT Club, Scripture Union Club,Scoutting Club, Music & Dance Club </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle FAQ answers -->
+    <script>
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(q => {
+            q.addEventListener('click', () => {
+                const parent = q.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

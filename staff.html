@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff - Lira Secondary School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0055a5;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #003f73;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px;
+            background-color: white;
+        }
+
+        h2, h3 {
+            color: #003366;
+            margin-top: 40px;
+        }
+
+        .staff-section {
+            margin-bottom: 40px;
+        }
+
+        .staff-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex: 1 1 300px;
+            background-color: #fdfdfd;
+            display: flex;
+            align-items: center;
+        }
+
+        .staff-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .staff-info {
+            flex-grow: 1;
+        }
+
+        .staff-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #0055a5;
+        }
+
+        .staff-position, .staff-experience {
+            margin: 4px 0;
+        }
+
+        .staff-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+      <h1><font size="35">LIRA SECONDARY SCHOOL</font></h1>
+ <img src="admin.JPG" alt="School ADMINSTRATION BLOCK" width="500">
+<p align="center"><strong> <marquee>Lira Secondary School is a center of academic excellence, nurturing students with holistic education and strong moral values.</marquee></strong></p>
+</header>
+
+<nav>
+    <a href="Home.html">Home</a>
+    <a href="Contacts.html">Contact</a>
+    <a href="Staff.html">Staff</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="FAQ.html">FAQ</a>
+</nav>
+
+<div class="container">
+
+    <h2>Our Dedicated Staff</h2>
+
+    <div class="staff-section">
+        <h3>Teaching Staff</h3>
+        <div class="staff-grid" id="teaching-staff"></div>
+    </div>
+
+    <div class="staff-section">
+        <h3>Support Staff</h3>
+        <div class="staff-grid" id="support-staff"></div>
+    </div>
+
+    <div class="staff-section">
+        <h3>Non-Teaching Staff</h3>
+        <div class="staff-grid" id="non-teaching-staff"></div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2025 Lira Secondary School. All rights reserved.
+</footer>
+
+<script>
+    // Teaching staff 
+    const teachingStaff = [
+        { name: "Mr. James Ocoo", position: "Head Teacher", experience: 20,},
+        { name: "Mrs. Sarah Auma", position: "Deputy Head Teacher", experience: 15,},
+        { name: "Mr. David Ocen", position: "Mathematics Teacher", experience: 12,},
+        { name: "Ms. Grace Akello", position: "Biology Teacher", experience: 10,},
+        { name: "Mr. John Oryem", position: "Chemistry Teacher", experience: 11,},
+        { name: "Mrs. Betty Alobo", position: "English Teacher", experience: 14,},
+        { name: "Mr. Samuel Omara", position: "Physics Teacher", experience: 9 },
+        { name: "Ms. Joan Atim", position: "Geography Teacher", experience: 8 },
+        { name: "Mr. Peter Obote", position: "History Teacher", experience: 7},
+        { name: "Ms. Nancy Adoch", position: "Literature Teacher", experience: 7 },
+        { name: "Mr. Fred Otim", position: "ICT Teacher", experience: 6 },
+        { name: "Mrs. Ruth Ayugi", position: "Agriculture Teacher", experience: 6 },
+        { name: "Mr. Denis Ojara", position: "CRE Teacher", experience: 5 },
+        { name: "Ms. Susan Akumu", position: "Art Teacher", experience: 3 },
+        { name: "Mr. Ogwal Kenneth Awio ", position: "Leb LangoTeacher", experience: 8 }
+    ];
+
+    // Non-teaching staff
+   const nonTeachingStaff = [
+        { name: "Mr. Mike Ogwang", position: "Security Officer", experience: 10 },
+        { name: "Ms. Beatrice Alia", position: "Receptionist", experience: 6 },
+        { name: "Mr. Patrick Ekol", position: "Driver", experience: 8 },
+        { name: "Ms. Stella Ayo", position: "Office Assistant", experience: 7 },
+    ];
+
+    // Support staff
+    const supportStaff = [
+        { name: "Mr. Jacob Ocen", position: " School Bursar" },
+	{ name: "Mr. Tom Oyugi", position: "Accounts Assistant"},
+        { name: "Ms. Annet Akello", position: "Secretary"},
+        { name: "Mrs. Joyce Auma", position: "Librarian"},
+        { name: "Mr. Philip Odong", position: "Store Keeper"},
+        { name: "Ms. Lilian Atim", position: "Nurse"},
+        
+    ];
+
+    function renderStaff(staffArray, containerId) {
+        const container = document.getElementById(containerId);
+        staffArray.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'staff-card';
+
+            const imgHtml = member.img ? `<img src="${member.img}" alt="${member.name}">` : '';
+            card.innerHTML = `
+                ${imgHtml}
+                <div class="staff-info">
+                    <div class="staff-name">${member.name}</div>
+                    <div class="staff-position"><strong>Position:</strong> ${member.position}</div>
+                    <div class="staff-experience"><strong>Experience:</strong> ${member.experience} years</div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // Render all staff categories
+    renderStaff(teachingStaff, 'teaching-staff');
+    renderStaff(supportStaff, 'support-staff');
+    renderStaff(nonTeachingStaff, 'non-teaching-staff');
+</script>
+
+</body>
+</html>

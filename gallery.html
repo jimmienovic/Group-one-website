@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .gallery-container {
+            margin: 30px auto;
+            max-width: 800px;
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            background-color: white;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .gallery-image.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+<h1><font size="35" color="blue">LIRA SECONDARY SCHOOL</font></h1>
+ 
+<p align="center"><strong> <marquee>Lira Secondary School is a center of academic excellence, nurturing students with holistic education and strong moral values.</marquee></strong></p>
+<nav>
+
+    <nav>
+    <a href="Home.html">Home</a>
+    <a href="Contacts.html">Contact</a>
+    <a href="Staff.html">Staff</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="FAQ.html">FAQ</a>
+</nav>
+
+    <div class="gallery-container">
+	
+        <img src="deputy.jpg" class="gallery-image active" alt="Deputy Headteacher">
+	
+	<img src="students.jpg" class="gallery-image active" alt="students ">
+	<img src="integrating ict.jpg" class="gallery-image active" alt="integrating ict in teaching ">
+        <img src="students1.jpg" class="gallery-image active" alt="students1">
+        <img src="ict lab.jpg" class="gallery-image" alt="ICT Lab">
+        <img src="Science lab.jpg" class="gallery-image" alt="Science Lab">
+        <img src="schoolteam.jpg" class="gallery-image" alt="School Team">
+ 	<img src="swimming.jpg" class="gallery-image" alt="School Team">
+	<img src="Agric projct.jpg" class="gallery-image" alt="Agric projct">
+	<img src="science labblock.jpg" class="gallery-image" alt="Science Lab">
+	<img src="dorm1.jpg" class="gallery-image" alt="dorm1">
+	<img src="dorm.jpg" class="gallery-image" alt="School Team">
+    </div>
+
+    <footer>
+       <p>&copy; 2025 Lira Secondary School Gallery. All rights reserved.</p>.
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.gallery-image');
+        let current = 0;
+
+        function showNextImage() {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
+
+</body>
+</html>
